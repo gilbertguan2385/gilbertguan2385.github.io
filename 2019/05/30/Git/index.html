@@ -31,7 +31,7 @@
 <meta property="article:modified_time" content="2020-08-06T10:44:39.000Z">
 <meta property="article:author" content="Gilbert Guan">
 <meta property="article:tag" content="Git">
-<meta property="article:tag" content="Learn">
+<meta property="article:tag" content="OpenSource">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2019/05/30/Git/">
@@ -284,13 +284,13 @@
 <li><p>查看远程库：<br>git remote   git remote -v  </p>
 </li>
 <li><p>关联远程库：<br>git remote add <code>remote_repo</code> git@<code>*.com</code>:<code>remote_repo</code></p>
-<p>eg:<br>git remote add origin <a href="mailto:&#x67;&#105;&#116;&#x40;&#103;&#105;&#x74;&#x68;&#x75;&#x62;&#x2e;&#x63;&#111;&#x6d;">&#x67;&#105;&#116;&#x40;&#103;&#105;&#x74;&#x68;&#x75;&#x62;&#x2e;&#x63;&#111;&#x6d;</a>:michaelliao/learngit.git</p>
+<p>eg:<br>git remote add origin <a href="mailto:&#103;&#x69;&#116;&#64;&#103;&#x69;&#116;&#x68;&#x75;&#98;&#46;&#x63;&#111;&#109;">&#103;&#x69;&#116;&#64;&#103;&#x69;&#116;&#x68;&#x75;&#98;&#46;&#x63;&#111;&#109;</a>:michaelliao/learngit.git</p>
 </li>
 <li><p>推送到远程：<br>git push -u <code>remote_repo</code> <code>local_branch</code>  第一次推送本地分支的所有内容<br>git push <code>remote_repo</code> <code>local_branch</code></p>
 </li>
 <li><p>从远程更新<br>git fetch<br>git fetch -t -p -f<br>git pull</p>
 </li>
-<li><p>从远程库克隆：<br>Git clone<br>eg:<br>git clone <a href="mailto:&#x67;&#x69;&#116;&#64;&#x67;&#105;&#116;&#104;&#x75;&#98;&#x2e;&#x63;&#111;&#x6d;">&#x67;&#x69;&#116;&#64;&#x67;&#105;&#116;&#104;&#x75;&#98;&#x2e;&#x63;&#111;&#x6d;</a>:michaelliao/gitskills.git</p>
+<li><p>从远程库克隆：<br>Git clone<br>eg:<br>git clone <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#103;&#x69;&#x74;&#x68;&#117;&#x62;&#46;&#x63;&#x6f;&#x6d;">&#x67;&#x69;&#x74;&#x40;&#103;&#x69;&#x74;&#x68;&#117;&#x62;&#46;&#x63;&#x6f;&#x6d;</a>:michaelliao/gitskills.git</p>
 </li>
 </ul>
 <h5 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h5><ul>
@@ -346,15 +346,11 @@
 <li><p>配置别名<br>git config –list|grep ‘alias’<br>git config –global alias.<code>name</code> <code>command</code><br>eg: git config –global alias.last log -1</p>
 </li>
 <li><p>已配置别名<br>vi ~/.gitconfig</p>
-<p>[user]<br>name = <code>user_name</code><br>email = <code>user_name</code>@<code>domain</code></p>
-<p>[alias]<br>alias.logp=log –graph –pretty=oneline –abbrev-commit</p>
-<p>alias.alias=!git config –list | grep ‘alias’</p>
-<p>alias.push<branch>=push origin <branch>:refs/for/<branch_name></p>
-<p>alias.ck<branch>=checkout <branch></p>
-<p>alias.merge<branch>=merge –no-ff <branch></p>
-<p>alias.coamend=commit –amend</p>
-<p>alias.cls=’clear’</p>
-<p>alias lostandfound=’’&#39;‘/*/**/gitLostAndFound.sh’&#39;‘’</p>
+<p>#git config –list –show-origin</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">[user]</span><br><span class="line">      name &#x3D; &#96;user_name&#96;</span><br><span class="line">      email &#x3D; &#96;user_name&#96;@&#96;domain&#96;</span><br><span class="line"></span><br><span class="line">[credential]</span><br><span class="line">      helper &#x3D; store</span><br><span class="line"></span><br><span class="line">[alias]</span><br><span class="line">      logp &#x3D; log --pretty&#x3D;oneline --graph --abbrev-commit</span><br><span class="line">      alias &#x3D; !git config --list|grep alias</span><br><span class="line">      ck &#x3D; checkout</span><br><span class="line">      unstage &#x3D; reset HEAD</span><br><span class="line">      coamend &#x3D; commit --amend</span><br><span class="line">      push&lt;branch_name&gt;&#x3D;push origin &lt;branch_name&gt;:refs&#x2F;for&#x2F;&lt;branch_name&gt;</span><br><span class="line">      ck&lt;branch_name&gt;&#x3D;checkout &lt;branch_name&gt;</span><br><span class="line">      merge&lt;branch_name&gt;&#x3D;merge --no-ff &lt;branch_name&gt;</span><br><span class="line">      cls &#x3D; !clear</span><br><span class="line"></span><br><span class="line">[core]</span><br><span class="line">        longpaths &#x3D; true</span><br><span class="line">        excludesfile&#x3D;~&#x2F;.gitignore_global</span><br><span class="line">        autocrlf &#x3D; true</span><br><span class="line">        safecrlf &#x3D; true</span><br><span class="line">[http]</span><br><span class="line">        sslVerify &#x3D; false</span><br><span class="line">        </span><br><span class="line">#[diff]</span><br><span class="line">#        tool &#x3D; meld</span><br><span class="line">        </span><br><span class="line">#[merge]</span><br><span class="line">#        tool &#x3D; meld</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"># cat ~&#x2F;.gitignore_global</span><br><span class="line">  # Project Files</span><br><span class="line">  .idea&#x2F;</span><br><span class="line">  .project</span><br><span class="line">  .classpath</span><br><span class="line"></span><br><span class="line">  # Compiled class file</span><br><span class="line">  *.class</span><br><span class="line">  target&#x2F;</span><br><span class="line"></span><br><span class="line">  # Log file</span><br><span class="line">  *.log</span><br><span class="line"></span><br><span class="line">  # Mobile Tools for Java (J2ME)</span><br><span class="line">  .mtj.tmp&#x2F;</span><br><span class="line"></span><br><span class="line">  # Package Files #</span><br><span class="line">  *.jar</span><br><span class="line">  *.war</span><br><span class="line">  *.nar</span><br><span class="line">  *.ear</span><br><span class="line">  *.zip</span><br><span class="line">  *.tar.gz</span><br><span class="line">  *.rar</span><br><span class="line"></span><br><span class="line">  # virtual machine crash logs, see http:&#x2F;&#x2F;www.java.com&#x2F;en&#x2F;download&#x2F;help&#x2F;error_hotspot.xml</span><br><span class="line">  hs_err_pid*</span><br></pre></td></tr></table></figure>
+
 </li>
 </ul>
 <h4 id="便捷脚本"><a href="#便捷脚本" class="headerlink" title="便捷脚本"></a>便捷脚本</h4><ul>
@@ -398,7 +394,7 @@
           
           <div class="post-tags">
               <a href="/tags/Git/" rel="tag"><i class="fa fa-tag"></i> Git</a>
-              <a href="/tags/Learn/" rel="tag"><i class="fa fa-tag"></i> Learn</a>
+              <a href="/tags/OpenSource/" rel="tag"><i class="fa fa-tag"></i> OpenSource</a>
           </div>
 
         
@@ -488,14 +484,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-count">7</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-count">4</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
