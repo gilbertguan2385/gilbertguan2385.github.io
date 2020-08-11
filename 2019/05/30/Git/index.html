@@ -31,7 +31,6 @@
 <meta property="article:modified_time" content="2020-08-06T10:44:39.000Z">
 <meta property="article:author" content="Gilbert Guan">
 <meta property="article:tag" content="Git">
-<meta property="article:tag" content="OpenSource">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://yoursite.com/2019/05/30/Git/">
@@ -226,127 +225,67 @@
 <a id="more"></a>
 
 <h4 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h4><ul>
-<li><p>工作区 working dir<br>版本控制范围的文件夹及文件，即.git文件夹同级的其他文件夹及文件</p>
-</li>
-<li><p>暂存区 stage</p>
-<p>未被Git版本管理的文件[<code>unstage</code>]到纳入Git版本管理的文件[<code>committed</code>]之间的过渡，不可跳过，新增之后的文件<code>add</code>后会放到暂存区，<code>reset head </code>后回到unstage状态</p>
-</li>
+<li>工作区 working dir<br>版本控制范围的文件夹及文件，即.git文件夹同级的其他文件夹及文件</li>
+<li>暂存区 stage<br>未被Git版本管理的文件[<code>unstage</code>]到纳入Git版本管理的文件[<code>committed</code>]之间的过渡，不可跳过，新增之后的文件<code>add</code>后会放到暂存区，<code>reset head </code>后回到unstage状态</li>
 </ul>
 <h4 id="相关资源"><a href="#相关资源" class="headerlink" title="相关资源"></a>相关资源</h4><ul>
 <li>教程<br>  <a target="_blank" rel="noopener" href="https://git-scm.com/book/zh/v2" title="官方指导">官方指导</a><br>  <a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/896043488029600]" title="Git教程">Git教程</a><br>  <a target="_blank" rel="noopener" href="https://github.com/k88hudson/git-flight-rules/blob/master/README_zh-CN.md" title="git-flight-rules">git-flight-rules</a><br>  <a target="_blank" rel="noopener" href="https://github.com/521xueweihan/git-tips" title="git-tips">git-tips</a><br>  <a target="_blank" rel="noopener" href="https://learngitbranching.js.org/">https://learngitbranching.js.org</a></li>
 <li>.gitignore<br>  <a target="_blank" rel="noopener" href="https://github.com/github/gitignore" title="gitignore">gitignore template</a></li>
 </ul>
 <h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><ul>
-<li><p>命令帮助 </p>
-<p>git  help <code>command</code></p>
-<p>git help -a</p>
-<p>git help -g</p>
-</li>
-<li><p>生成SSH公钥</p>
-<p>ssh-keygen -t rsa</p>
-</li>
-<li><p>初始化库 </p>
-<p>git init</p>
-</li>
-<li><p>添加文件至暂存 </p>
-<p>git add <code>filename</code></p>
-</li>
-<li><p>清空未跟踪的文件 </p>
-<p>git clean -nfd</p>
-<p>-n 参数查看会删掉哪些文件，防止重要文件被误删</p>
-</li>
-<li><p>撤销工作区的修改 </p>
-<p>git checkout – <code>filename</code></p>
-</li>
-<li><p>提交到库 </p>
-<p>git commit -m “desc”</p>
-</li>
-<li><p>查看状态 </p>
-<p>git status</p>
-</li>
-<li><p>文件比较 </p>
-<p>git diff <code>filename</code></p>
-</li>
-<li><p>文件比较(最新版本与工作区) </p>
-<p>git diff HEAD – <code>filename</code></p>
-</li>
-<li><p>提交日志 </p>
-<p>git log<br>git log –pretty=oneline<br>git log –graph –pretty=oneline -abbrev-commit</p>
-</li>
-<li><p>版本回退：<br>git reset –hard/–soft HEAD^<br>git reset –hard/–soft HEAD~<code>number</code><br>git reset – hard/–soft <code>commit_id</code></p>
-</li>
-<li><p>版本文件删除：<br>git rm -r <code>filename</code></p>
-</li>
-<li><p>查看命令历史：<br>git reflog –pretty=oneline</p>
-</li>
+<li>命令帮助<br>git  help <code>command</code><br>git help -a<br>git help -g</li>
+<li>生成SSH公钥<br>ssh-keygen -t rsa</li>
+<li>初始化库<br>git init</li>
+<li>添加文件至暂存<br>git add <code>filename</code></li>
+<li>清空未跟踪的文件<br>git clean -nfd<br>-n 参数查看会删掉哪些文件，防止重要文件被误删</li>
+<li>撤销工作区的修改<br>git checkout – <code>filename</code></li>
+<li>提交到库<br>git commit -m “desc”</li>
+<li>查看状态<br>git status</li>
+<li>文件比较<br>git diff <code>filename</code></li>
+<li>文件比较(最新版本与工作区)<br>git diff HEAD – <code>filename</code></li>
+<li>提交日志<br>git log<br>git log –pretty=oneline<br>git log –graph –pretty=oneline -abbrev-commit</li>
+<li>版本回退：<br>git reset –hard/–soft HEAD^<br>git reset –hard/–soft HEAD~<code>number</code><br>git reset – hard/–soft <code>commit_id</code></li>
+<li>版本文件删除：<br>git rm -r <code>filename</code></li>
+<li>查看命令历史：<br>git reflog –pretty=oneline</li>
 </ul>
 <h5 id="远程库"><a href="#远程库" class="headerlink" title="远程库"></a>远程库</h5><ul>
-<li><p>查看远程库：<br>git remote   git remote -v  </p>
-</li>
-<li><p>关联远程库：<br>git remote add <code>remote_repo</code> git@<code>*.com</code>:<code>remote_repo</code></p>
-<p>eg:<br>git remote add origin <a href="mailto:&#103;&#x69;&#116;&#64;&#103;&#x69;&#116;&#x68;&#x75;&#98;&#46;&#x63;&#111;&#109;">&#103;&#x69;&#116;&#64;&#103;&#x69;&#116;&#x68;&#x75;&#98;&#46;&#x63;&#111;&#109;</a>:michaelliao/learngit.git</p>
-</li>
-<li><p>推送到远程：<br>git push -u <code>remote_repo</code> <code>local_branch</code>  第一次推送本地分支的所有内容<br>git push <code>remote_repo</code> <code>local_branch</code></p>
-</li>
-<li><p>从远程更新<br>git fetch<br>git fetch -t -p -f<br>git pull</p>
-</li>
-<li><p>从远程库克隆：<br>Git clone<br>eg:<br>git clone <a href="mailto:&#x67;&#x69;&#x74;&#x40;&#103;&#x69;&#x74;&#x68;&#117;&#x62;&#46;&#x63;&#x6f;&#x6d;">&#x67;&#x69;&#x74;&#x40;&#103;&#x69;&#x74;&#x68;&#117;&#x62;&#46;&#x63;&#x6f;&#x6d;</a>:michaelliao/gitskills.git</p>
-</li>
+<li>查看远程库：<br>git remote   git remote -v  </li>
+<li>关联远程库：<br>git remote add <code>remote_repo</code> git@<code>*.com</code>:<code>remote_repo</code><br>eg:<br>git remote add origin <a href="mailto:&#103;&#x69;&#x74;&#x40;&#x67;&#x69;&#116;&#104;&#117;&#98;&#46;&#99;&#111;&#109;">&#103;&#x69;&#x74;&#x40;&#x67;&#x69;&#116;&#104;&#117;&#98;&#46;&#99;&#111;&#109;</a>:michaelliao/learngit.git</li>
+<li>推送到远程：<br>git push -u <code>remote_repo</code> <code>local_branch</code>  第一次推送本地分支的所有内容<br>git push <code>remote_repo</code> <code>local_branch</code></li>
+<li>从远程更新<br>git fetch<br>git fetch -t -p -f<br>git pull</li>
+<li>从远程库克隆：<br>Git clone<br>eg:<br>git clone <a href="mailto:&#103;&#105;&#116;&#x40;&#103;&#x69;&#116;&#104;&#x75;&#98;&#46;&#99;&#x6f;&#x6d;">&#103;&#105;&#116;&#x40;&#103;&#x69;&#116;&#104;&#x75;&#98;&#46;&#99;&#x6f;&#x6d;</a>:michaelliao/gitskills.git</li>
 </ul>
 <h5 id="分支管理"><a href="#分支管理" class="headerlink" title="分支管理"></a>分支管理</h5><ul>
-<li><p>查看分支<br>git branch  git branch -a</p>
-</li>
-<li><p>创建分支<br>git branch  <code>branch_name</code></p>
-</li>
-<li><p>删除分支<br>git branch -d <code>branch_name</code><br>git branch -D <code>branch_name</code>  强制删除未被合并的分支</p>
-</li>
-<li><p>切换分支<br>git checkout <code>branch_name</code></p>
-</li>
-<li><p>创建并切换分支<br>git checkout -b <code>branch_name</code></p>
-</li>
-<li><p>合并分支<br>git merge <other_branch>   <strong>Fast-forward模式，看不出有合并过，删除分支后会丢掉分支信息</strong><br>git merge –no-ff -m “desc” <code>other_branch</code>  <strong>禁用Fast-forward模式，可看出合并</strong></p>
-</li>
-<li><p>本地分支与远程分支关联<br>git branch –set-upstream <code>local_branch</code> <code>remote_branch</code></p>
-</li>
+<li>查看分支<br>git branch  git branch -a</li>
+<li>创建分支<br>git branch  <code>branch_name</code></li>
+<li>删除分支<br>git branch -d <code>branch_name</code><br>git branch -D <code>branch_name</code>  强制删除未被合并的分支</li>
+<li>切换分支<br>git checkout <code>branch_name</code></li>
+<li>创建并切换分支<br>git checkout -b <code>branch_name</code></li>
+<li>合并分支<br>git merge <other_branch>   <strong>Fast-forward模式，看不出有合并过，删除分支后会丢掉分支信息</strong><br>git merge –no-ff -m “desc” <code>other_branch</code>  <strong>禁用Fast-forward模式，可看出合并</strong></li>
+<li>本地分支与远程分支关联<br>git branch –set-upstream <code>local_branch</code> <code>remote_branch</code></li>
 </ul>
 <h5 id="Bug分支"><a href="#Bug分支" class="headerlink" title="Bug分支"></a>Bug分支</h5><ul>
-<li><p>隐藏工作区<br>git stash</p>
-</li>
-<li><p>查看隐藏的工作区<br>git stash list</p>
-</li>
-<li><p>恢复工作区<br>git stash apply</p>
-</li>
-<li><p>查看已经删除的工作区<br>git fsck –unreachable<br><strong>git fsck –lost-found</strong><br>git fsck –lost-found|grep ‘ ‘|awk ‘{print $3}’</p>
-<p>恢复已经丢失的commit：<br>git merge commit_id</p>
-</li>
-<li><p>删除stash内容<br>git stash drop</p>
-</li>
-<li><p>恢复并删除<br>git stash pop</p>
-</li>
-<li><p>重新生成change_id :<br><strong>git commit –amend</strong></p>
-</li>
-<li><p>推送分支到远程Gerrit:<br><strong>git push origin <branch>:refs/for/<branch></strong></p>
-</li>
+<li>隐藏工作区<br>git stash</li>
+<li>查看隐藏的工作区<br>git stash list</li>
+<li>恢复工作区<br>git stash apply</li>
+<li>查看已经删除的工作区<br>git fsck –unreachable<br><strong>git fsck –lost-found</strong><br>git fsck –lost-found|grep ‘ ‘|awk ‘{print $3}’<br>恢复已经丢失的commit：<br>git merge commit_id</li>
+<li>删除stash内容<br>git stash drop</li>
+<li>恢复并删除<br>git stash pop</li>
+<li>重新生成change_id :<br><strong>git commit –amend</strong></li>
+<li>推送分支到远程Gerrit:<br><strong>git push origin <branch>:refs/for/<branch></strong></li>
 </ul>
 <h5 id="标签管理"><a href="#标签管理" class="headerlink" title="标签管理"></a>标签管理</h5><ul>
-<li><p>创建标签<br>git tag <code>tag_name</code><br>git tag <code>tag_name</code> <code>commit_id</code></p>
-</li>
-<li><p>创建制定标签名的标签<br>git tag -a <code>tag_name</code> -m “desc” <code>commit_id</code></p>
-</li>
-<li><p>查看标签  git tag<br>查看标签信息  git tag <code>tag_name</code></p>
-</li>
-<li><p>删除标签<br>git tag -d <code>tag_name</code></p>
-</li>
-<li><p>删除推送远程的标签<br>git push <code>remote_repo</code> :refs/tags/<code>tag_name</code></p>
-</li>
-<li><p>推送标签到远程<br>git push <code>remote_repo</code> <code>tag_name</code><br>git push <code>remote_repo</code> –tags</p>
-</li>
+<li>创建标签<br>git tag <code>tag_name</code><br>git tag <code>tag_name</code> <code>commit_id</code></li>
+<li>创建制定标签名的标签<br>git tag -a <code>tag_name</code> -m “desc” <code>commit_id</code></li>
+<li>查看标签  git tag<br>查看标签信息  git tag <code>tag_name</code></li>
+<li>删除标签<br>git tag -d <code>tag_name</code></li>
+<li>删除推送远程的标签<br>git push <code>remote_repo</code> :refs/tags/<code>tag_name</code></li>
+<li>推送标签到远程<br>git push <code>remote_repo</code> <code>tag_name</code><br>git push <code>remote_repo</code> –tags</li>
 </ul>
 <h5 id="别名"><a href="#别名" class="headerlink" title="别名"></a>别名</h5><ul>
 <li><p>配置别名<br>git config –list|grep ‘alias’<br>git config –global alias.<code>name</code> <code>command</code><br>eg: git config –global alias.last log -1</p>
 </li>
-<li><p>已配置别名<br>vi ~/.gitconfig</p>
-<p>#git config –list –show-origin</p>
+<li><p>已配置别名<br>vi ~/.gitconfig<br>#git config –list –show-origin</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">[user]</span><br><span class="line">      name &#x3D; &#96;user_name&#96;</span><br><span class="line">      email &#x3D; &#96;user_name&#96;@&#96;domain&#96;</span><br><span class="line"></span><br><span class="line">[credential]</span><br><span class="line">      helper &#x3D; store</span><br><span class="line"></span><br><span class="line">[alias]</span><br><span class="line">      logp &#x3D; log --pretty&#x3D;oneline --graph --abbrev-commit</span><br><span class="line">      alias &#x3D; !git config --list|grep alias</span><br><span class="line">      ck &#x3D; checkout</span><br><span class="line">      unstage &#x3D; reset HEAD</span><br><span class="line">      coamend &#x3D; commit --amend</span><br><span class="line">      push&lt;branch_name&gt;&#x3D;push origin &lt;branch_name&gt;:refs&#x2F;for&#x2F;&lt;branch_name&gt;</span><br><span class="line">      ck&lt;branch_name&gt;&#x3D;checkout &lt;branch_name&gt;</span><br><span class="line">      merge&lt;branch_name&gt;&#x3D;merge --no-ff &lt;branch_name&gt;</span><br><span class="line">      cls &#x3D; !clear</span><br><span class="line"></span><br><span class="line">[core]</span><br><span class="line">        longpaths &#x3D; true</span><br><span class="line">        excludesfile&#x3D;~&#x2F;.gitignore_global</span><br><span class="line">        autocrlf &#x3D; true</span><br><span class="line">        safecrlf &#x3D; true</span><br><span class="line">[http]</span><br><span class="line">        sslVerify &#x3D; false</span><br><span class="line">        </span><br><span class="line">#[diff]</span><br><span class="line">#        tool &#x3D; meld</span><br><span class="line">        </span><br><span class="line">#[merge]</span><br><span class="line">#        tool &#x3D; meld</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"># cat ~&#x2F;.gitignore_global</span><br><span class="line">  # Project Files</span><br><span class="line">  .idea&#x2F;</span><br><span class="line">  .project</span><br><span class="line">  .classpath</span><br><span class="line"></span><br><span class="line">  # Compiled class file</span><br><span class="line">  *.class</span><br><span class="line">  target&#x2F;</span><br><span class="line"></span><br><span class="line">  # Log file</span><br><span class="line">  *.log</span><br><span class="line"></span><br><span class="line">  # Mobile Tools for Java (J2ME)</span><br><span class="line">  .mtj.tmp&#x2F;</span><br><span class="line"></span><br><span class="line">  # Package Files #</span><br><span class="line">  *.jar</span><br><span class="line">  *.war</span><br><span class="line">  *.nar</span><br><span class="line">  *.ear</span><br><span class="line">  *.zip</span><br><span class="line">  *.tar.gz</span><br><span class="line">  *.rar</span><br><span class="line"></span><br><span class="line">  # virtual machine crash logs, see http:&#x2F;&#x2F;www.java.com&#x2F;en&#x2F;download&#x2F;help&#x2F;error_hotspot.xml</span><br><span class="line">  hs_err_pid*</span><br></pre></td></tr></table></figure>
@@ -394,7 +333,6 @@
           
           <div class="post-tags">
               <a href="/tags/Git/" rel="tag"><i class="fa fa-tag"></i> Git</a>
-              <a href="/tags/OpenSource/" rel="tag"><i class="fa fa-tag"></i> OpenSource</a>
           </div>
 
         
@@ -484,20 +422,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">7</span>
+          <span class="site-state-item-count">8</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">5</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
